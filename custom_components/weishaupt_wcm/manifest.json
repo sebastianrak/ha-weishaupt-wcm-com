@@ -1,7 +1,13 @@
 {
   "domain": "weishaupt_wcm",
   "name": "Weishaupt WCM-COM",
-  "codeowners": ["@sebastianrak"],
+  "categories": [
+    "climate.thermostats_heating",
+    "climate.water_heaters"
+  ],
+  "codeowners": [
+    "@sebastianrak"
+  ],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/sebastianrak/ha-weishaupt-wcm-com",
