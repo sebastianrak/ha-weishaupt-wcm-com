@@ -1,0 +1,87 @@
+# Heizungskarte nur mit Standardkarten (keine HACS-Karten nötig).
+# Entitäts-IDs für deutsche Systemsprache, Heizkreis 2 und einen Wärmeerzeuger.
+# Englische Systemsprache: sensor.heat_generator_…, select.heating_circuit_2_… usw.
+#
+# Je nach Regler heißt die Auswahl "Betriebsart" (select.heizkreis_2_betriebsart)
+# oder "Betriebsart Warmwasser" (select.heizkreis_2_betriebsart_warmwasser).
+type: vertical-stack
+cards:
+  - type: heading
+    heading: Heizung
+    icon: mdi:radiator
+    badges:
+      - type: entity
+        entity: sensor.warmeerzeuger_aussentemperatur
+      - type: entity
+        entity: binary_sensor.warmeerzeuger_flamme
+      - type: entity
+        entity: binary_sensor.warmeerzeuger_storung
+        visibility:
+          - condition: state
+            entity: binary_sensor.warmeerzeuger_storung
+            state: "on"
+
+  - type: tile
+    entity: select.heizkreis_2_betriebsart
+    features_position: bottom
+    features:
+      - type: select-options
+
+  - type: grid
+    columns: 2
+    square: false
+    cards:
+      - type: tile
+        entity: number.heizkreis_2_normal_raumtemperatur
+        name: Raum normal
+        features_position: bottom
+        features:
+          - type: numeric-input
+            style: buttons
+      - type: tile
+        entity: number.heizkreis_2_absenk_raumtemperatur
+        name: Raum Absenk
+        features_position: bottom
+        features:
+          - type: numeric-input
+            style: buttons
+      - type: tile
+        entity: number.heizkreis_2_warmwasser_normal_soll
+        name: Warmwasser Soll
+        features_position: bottom
+        features:
+          - type: numeric-input
+            style: buttons
+      - type: tile
+        entity: sensor.warmeerzeuger_warmwassertemperatur
+        name: Warmwasser Ist
+        features_position: bottom
+        features:
+          - type: trend-graph
+            hours_to_show: 24
+
+  - type: history-graph
+    title: Temperaturen (24 h)
+    hours_to_show: 24
+    entities:
+      - entity: sensor.warmeerzeuger_vorlauftemperatur
+        name: Vorlauf
+      - entity: sensor.warmeerzeuger_warmeanforderung
+        name: Anforderung
+      - entity: sensor.warmeerzeuger_warmwassertemperatur
+        name: Warmwasser
+      - entity: sensor.warmeerzeuger_aussentemperatur
+        name: Außen
+
+  - type: glance
+    show_state: true
+    columns: 4
+    entities:
+      - entity: sensor.warmeerzeuger_laststellung
+        name: Last
+      - entity: sensor.warmeerzeuger_abgastemperatur
+        name: Abgas
+      - entity: sensor.warmeerzeuger_brennerstarts
+        name: Starts
+      - entity: sensor.warmeerzeuger_betriebsstunden_brenner
+        name: Stunden

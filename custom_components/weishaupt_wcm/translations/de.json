@@ -1,0 +1,277 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Weishaupt WCM-COM",
+        "description": "IP-Adresse des WCM-COM und – falls am Modul aktiviert – Benutzer und Passwort. Während der Einrichtung darf niemand in der Weboberfläche angemeldet sein.",
+        "data": {
+          "host": "Host",
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "WCM-COM nicht erreichbar oder belegt. Ist jemand in der Weboberfläche angemeldet?",
+      "invalid_auth": "Benutzername oder Passwort falsch.",
+      "no_devices": "Der Bus-Scan hat weder einen Wärmeerzeuger noch einen Heizkreis gefunden."
+    },
+    "abort": {
+      "already_configured": "Dieses WCM-COM ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Abfrage",
+        "data": {
+          "scan_interval": "Abfrageintervall in Sekunden (30–3600)"
+        }
+      }
+    }
+  },
+  "device": {
+    "generator": {
+      "name": "Wärmeerzeuger"
+    },
+    "generator_n": {
+      "name": "Wärmeerzeuger {number}"
+    },
+    "circuit": {
+      "name": "Heizkreis {number}"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "flamme": {
+        "name": "Flamme"
+      },
+      "gasventil_1": {
+        "name": "Gasventil 1"
+      },
+      "gasventil_2": {
+        "name": "Gasventil 2"
+      },
+      "heizbetrieb": {
+        "name": "Heizbetrieb"
+      },
+      "kesselpumpe": {
+        "name": "Kesselpumpe"
+      },
+      "stoerung": {
+        "name": "Störung"
+      },
+      "warmwasserbetrieb": {
+        "name": "Warmwasserbetrieb"
+      }
+    },
+    "number": {
+      "absenk_raumtemperatur": {
+        "name": "Absenk-Raumtemperatur"
+      },
+      "absenk_vl_soll": {
+        "name": "Absenk VL-Soll"
+      },
+      "normal_raumtemperatur": {
+        "name": "Normal-Raumtemperatur"
+      },
+      "normal_vl_soll": {
+        "name": "Normal VL-Soll"
+      },
+      "raumfrosttemperatur": {
+        "name": "Raumfrosttemperatur"
+      },
+      "sommer_winter_umschaltung": {
+        "name": "Sommer/Winter-Umschalttemperatur"
+      },
+      "steilheit": {
+        "name": "Steilheit"
+      },
+      "ww_absenk_soll": {
+        "name": "Warmwasser Absenk-Soll"
+      },
+      "ww_normal_soll": {
+        "name": "Warmwasser Normal-Soll"
+      },
+      "ww_vorverlegung": {
+        "name": "Warmwasser Vorverlegung"
+      }
+    },
+    "select": {
+      "betriebsart": {
+        "name": "Betriebsart",
+        "state": {
+          "standby": "Standby",
+          "normal": "Normal",
+          "setback": "Absenk",
+          "summer": "Sommer",
+          "program_1": "Programm 1",
+          "program_2": "Programm 2",
+          "program_3": "Programm 3",
+          "central": "Wie Leitstelle"
+        }
+      },
+      "betriebsart_warmwasser": {
+        "name": "Betriebsart Warmwasser",
+        "state": {
+          "standby": "Standby",
+          "normal": "Normal",
+          "setback": "Absenk",
+          "dhw_program": "WW-Programm",
+          "central": "Wie Leitstelle"
+        }
+      }
+    },
+    "sensor": {
+      "abgastemperatur": {
+        "name": "Abgastemperatur"
+      },
+      "aussentemperatur": {
+        "name": "Außentemperatur"
+      },
+      "betriebsphase": {
+        "name": "Betriebsphase"
+      },
+      "betriebsstunden": {
+        "name": "Betriebsstunden Brenner"
+      },
+      "brennerstarts": {
+        "name": "Brennerstarts"
+      },
+      "fehlercode": {
+        "name": "Fehlercode"
+      },
+      "frostheizgrenze": {
+        "name": "Frostheizgrenze"
+      },
+      "gedaempfte_aussentemperatur": {
+        "name": "Gedämpfte Außentemperatur"
+      },
+      "gemischte_aussentemperatur": {
+        "name": "Gemischte Außentemperatur"
+      },
+      "hk_typ": {
+        "name": "Heizkreis-Typ",
+        "state": {
+          "floor_warming": "Fußbodenerwärmung",
+          "floor_heating": "Fußbodenheizung",
+          "radiator_60": "Radiator 60 °C",
+          "radiator_75": "Radiator 75 °C",
+          "convector": "Konvektor",
+          "universal": "Universal"
+        }
+      },
+      "kesseltemperatur": {
+        "name": "Kesseltemperatur"
+      },
+      "laststellung": {
+        "name": "Laststellung"
+      },
+      "p18_sonderniveau": {
+        "name": "P18 Sonderniveau Heizbetrieb"
+      },
+      "p20_aussenfuehler_korrektur": {
+        "name": "P20 Korrektur Außenfühler"
+      },
+      "p23_anlagenfrostschutz": {
+        "name": "P23 Anlagenfrostschutz"
+      },
+      "p30_min_vl_soll": {
+        "name": "P30 Min. VL-Soll"
+      },
+      "p31_max_vl_soll": {
+        "name": "P31 Max. VL-Soll"
+      },
+      "p32_schaltdifferenz": {
+        "name": "P32 Schaltdifferenz VL"
+      },
+      "p34_taktsperre": {
+        "name": "P34 Brenner-Taktsperre"
+      },
+      "p37_max_leistung_heizung": {
+        "name": "P37 Max. Leistung Heizung"
+      },
+      "p38_max_leistung_ww": {
+        "name": "P38 Max. Leistung WW"
+      },
+      "p52_max_ladezeit_ww": {
+        "name": "P52 Max. Ladezeit WW"
+      },
+      "pufferfuehler": {
+        "name": "Pufferfühler"
+      },
+      "raumtemperatur": {
+        "name": "Raumtemperatur"
+      },
+      "raumthermostat": {
+        "name": "Raumthermostat",
+        "state": {
+          "off": "Aus",
+          "day_on": "Tag Ein",
+          "1k": "1 K",
+          "2k": "2 K",
+          "3k": "3 K"
+        }
+      },
+      "reduziertbetrieb": {
+        "name": "Reduziertbetrieb",
+        "state": {
+          "frost": "Frost",
+          "setback": "Absenk"
+        }
+      },
+      "regelvariante": {
+        "name": "Regelvariante",
+        "state": {
+          "constant_flow": "Konstantvorlauf",
+          "weather": "Witterungsführung",
+          "weather_room": "Witterungs-/Raumführung",
+          "room": "Raumführung"
+        }
+      },
+      "vorlaufsoll_hk": {
+        "name": "Vorlauf-Soll Heizkreis"
+      },
+      "vorlaufsoll_system": {
+        "name": "Vorlauf-Soll System"
+      },
+      "vorlauftemperatur": {
+        "name": "Vorlauftemperatur"
+      },
+      "vorlauftemperatur_hk": {
+        "name": "Vorlauftemperatur Heizkreis"
+      },
+      "waermeanforderung": {
+        "name": "Wärmeanforderung"
+      },
+      "warmwassertemperatur": {
+        "name": "Warmwassertemperatur"
+      },
+      "warmwassertemperatur_hk": {
+        "name": "Warmwassertemperatur Heizkreis"
+      },
+      "zeit_seit_wartung": {
+        "name": "Zeit seit Wartung"
+      },
+      "zirkulationstemperatur": {
+        "name": "Zirkulationstemperatur"
+      }
+    },
+    "switch": {
+      "pause": {
+        "name": "Abfrage pausieren"
+      }
+    }
+  },
+  "exceptions": {
+    "write_failed": {
+      "message": "Wert konnte nicht geschrieben werden: {error}"
+    },
+    "out_of_range": {
+      "message": "{value} liegt außerhalb des erlaubten Bereichs {min}–{max}."
+    },
+    "invalid_option": {
+      "message": "Unbekannte Auswahl: {option}"
+    }
+  }
+}

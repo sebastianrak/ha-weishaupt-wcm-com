@@ -1,0 +1,277 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Weishaupt WCM-COM",
+        "description": "IP address of the WCM-COM and, if enabled on the module, user name and password. Nobody may be logged in to the web interface during setup.",
+        "data": {
+          "host": "Host",
+          "username": "User name",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "WCM-COM not reachable or busy. Is someone logged in to the web interface?",
+      "invalid_auth": "Wrong user name or password.",
+      "no_devices": "The bus scan found neither a heat generator nor a heating circuit."
+    },
+    "abort": {
+      "already_configured": "This WCM-COM is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling",
+        "data": {
+          "scan_interval": "Polling interval in seconds (30–3600)"
+        }
+      }
+    }
+  },
+  "device": {
+    "generator": {
+      "name": "Heat generator"
+    },
+    "generator_n": {
+      "name": "Heat generator {number}"
+    },
+    "circuit": {
+      "name": "Heating circuit {number}"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "flamme": {
+        "name": "Flame"
+      },
+      "gasventil_1": {
+        "name": "Gas valve 1"
+      },
+      "gasventil_2": {
+        "name": "Gas valve 2"
+      },
+      "heizbetrieb": {
+        "name": "Heating mode"
+      },
+      "kesselpumpe": {
+        "name": "Boiler pump"
+      },
+      "stoerung": {
+        "name": "Fault"
+      },
+      "warmwasserbetrieb": {
+        "name": "Hot water mode"
+      }
+    },
+    "number": {
+      "absenk_raumtemperatur": {
+        "name": "Setback room temperature"
+      },
+      "absenk_vl_soll": {
+        "name": "Setback flow setpoint"
+      },
+      "normal_raumtemperatur": {
+        "name": "Normal room temperature"
+      },
+      "normal_vl_soll": {
+        "name": "Normal flow setpoint"
+      },
+      "raumfrosttemperatur": {
+        "name": "Room frost protection temperature"
+      },
+      "sommer_winter_umschaltung": {
+        "name": "Summer/winter switchover temperature"
+      },
+      "steilheit": {
+        "name": "Heating curve slope"
+      },
+      "ww_absenk_soll": {
+        "name": "Hot water setback setpoint"
+      },
+      "ww_normal_soll": {
+        "name": "Hot water normal setpoint"
+      },
+      "ww_vorverlegung": {
+        "name": "Hot water advance time"
+      }
+    },
+    "select": {
+      "betriebsart": {
+        "name": "Operating mode",
+        "state": {
+          "standby": "Standby",
+          "normal": "Normal",
+          "setback": "Setback",
+          "summer": "Summer",
+          "program_1": "Program 1",
+          "program_2": "Program 2",
+          "program_3": "Program 3",
+          "central": "As central unit"
+        }
+      },
+      "betriebsart_warmwasser": {
+        "name": "Hot water operating mode",
+        "state": {
+          "standby": "Standby",
+          "normal": "Normal",
+          "setback": "Setback",
+          "dhw_program": "Hot water program",
+          "central": "As central unit"
+        }
+      }
+    },
+    "sensor": {
+      "abgastemperatur": {
+        "name": "Flue gas temperature"
+      },
+      "aussentemperatur": {
+        "name": "Outdoor temperature"
+      },
+      "betriebsphase": {
+        "name": "Operating phase"
+      },
+      "betriebsstunden": {
+        "name": "Burner operating hours"
+      },
+      "brennerstarts": {
+        "name": "Burner starts"
+      },
+      "fehlercode": {
+        "name": "Error code"
+      },
+      "frostheizgrenze": {
+        "name": "Frost heating limit"
+      },
+      "gedaempfte_aussentemperatur": {
+        "name": "Damped outdoor temperature"
+      },
+      "gemischte_aussentemperatur": {
+        "name": "Mixed outdoor temperature"
+      },
+      "hk_typ": {
+        "name": "Heating circuit type",
+        "state": {
+          "floor_warming": "Floor warming",
+          "floor_heating": "Underfloor heating",
+          "radiator_60": "Radiator 60 °C",
+          "radiator_75": "Radiator 75 °C",
+          "convector": "Convector",
+          "universal": "Universal"
+        }
+      },
+      "kesseltemperatur": {
+        "name": "Boiler temperature"
+      },
+      "laststellung": {
+        "name": "Load"
+      },
+      "p18_sonderniveau": {
+        "name": "P18 Special heating level"
+      },
+      "p20_aussenfuehler_korrektur": {
+        "name": "P20 Outdoor sensor correction"
+      },
+      "p23_anlagenfrostschutz": {
+        "name": "P23 System frost protection"
+      },
+      "p30_min_vl_soll": {
+        "name": "P30 Min. flow setpoint"
+      },
+      "p31_max_vl_soll": {
+        "name": "P31 Max. flow setpoint"
+      },
+      "p32_schaltdifferenz": {
+        "name": "P32 Flow switching differential"
+      },
+      "p34_taktsperre": {
+        "name": "P34 Burner anti-cycling time"
+      },
+      "p37_max_leistung_heizung": {
+        "name": "P37 Max. heating output"
+      },
+      "p38_max_leistung_ww": {
+        "name": "P38 Max. hot water output"
+      },
+      "p52_max_ladezeit_ww": {
+        "name": "P52 Max. hot water charging time"
+      },
+      "pufferfuehler": {
+        "name": "Buffer sensor"
+      },
+      "raumtemperatur": {
+        "name": "Room temperature"
+      },
+      "raumthermostat": {
+        "name": "Room thermostat",
+        "state": {
+          "off": "Off",
+          "day_on": "Day on",
+          "1k": "1 K",
+          "2k": "2 K",
+          "3k": "3 K"
+        }
+      },
+      "reduziertbetrieb": {
+        "name": "Reduced mode",
+        "state": {
+          "frost": "Frost",
+          "setback": "Setback"
+        }
+      },
+      "regelvariante": {
+        "name": "Control mode",
+        "state": {
+          "constant_flow": "Constant flow",
+          "weather": "Weather-compensated",
+          "weather_room": "Weather and room compensated",
+          "room": "Room-compensated"
+        }
+      },
+      "vorlaufsoll_hk": {
+        "name": "Circuit flow setpoint"
+      },
+      "vorlaufsoll_system": {
+        "name": "System flow setpoint"
+      },
+      "vorlauftemperatur": {
+        "name": "Flow temperature"
+      },
+      "vorlauftemperatur_hk": {
+        "name": "Circuit flow temperature"
+      },
+      "waermeanforderung": {
+        "name": "Heat demand"
+      },
+      "warmwassertemperatur": {
+        "name": "Hot water temperature"
+      },
+      "warmwassertemperatur_hk": {
+        "name": "Circuit hot water temperature"
+      },
+      "zeit_seit_wartung": {
+        "name": "Time since service"
+      },
+      "zirkulationstemperatur": {
+        "name": "Circulation temperature"
+      }
+    },
+    "switch": {
+      "pause": {
+        "name": "Pause polling"
+      }
+    }
+  },
+  "exceptions": {
+    "write_failed": {
+      "message": "Could not write value: {error}"
+    },
+    "out_of_range": {
+      "message": "{value} is outside the allowed range {min}–{max}."
+    },
+    "invalid_option": {
+      "message": "Unknown option: {option}"
+    }
+  }
+}
